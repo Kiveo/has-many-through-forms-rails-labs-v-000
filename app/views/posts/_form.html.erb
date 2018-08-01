@@ -8,7 +8,7 @@
   <!-- Make check boxes for previously exisintg categories -->
   <% Category.all.each do |c| %>
     <label for="category_id_<%= c.id %>"><%= c.name %></label>
-    <input type="checkbox" name="post[category_ids][]" value="<%= c.id %>">
+    <input type="checkbox" name="post[category_ids][]" value="<%= c.id %>" id="<%= c.name %>">
   <% end %>
 
   <%= f.submit %>
