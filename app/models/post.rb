@@ -7,7 +7,6 @@ class Post < ActiveRecord::Base
   def categories_attributes=(categories_hashes)
     category_hashes.each do |i, category_attributes|
       category = Category.find_or_create_by(name: category_attributes[:name])
-      # self.categories << category  inefficient
       self.post_categories.build(category: category)
     end
   end
