@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
       category = Category.find_or_create_by(name: category_attributes[:name])
       # self.categories << category  inefficient
       self.post_categories.build(category: category)
-    end 
+    end
   end
 
 
