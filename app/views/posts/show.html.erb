@@ -3,4 +3,8 @@
 <h1><%= @post.title %></h1>
 <p>CONTENT: <%= @post.content %></p>
 
-<h2>Add Comment?</h2>
+<ul>
+  <%= @post.categories.each do |cat| %>
+    <li><%= c.name %></li>
+  <% end %>
+</ul>
