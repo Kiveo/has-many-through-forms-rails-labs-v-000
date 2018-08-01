@@ -6,8 +6,10 @@
   <p><%= f.label :content %>
   <%= f.text_field :content %></p>
   <!-- Make check boxes for previously exisintg categories -->
-  <!-- <input type="checkbox" name="post[category_ids][]" value="#id"> -->
-
+  <% Category.all.each do |c| %>
+    <label><%= c.name %></label>
+    <input type="checkbox" name="post[category_ids][]" value="<%= c.id %>">
+  <% end %>
 
   <%= f.submit %>
 
