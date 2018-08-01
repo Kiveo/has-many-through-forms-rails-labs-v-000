@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :users, through: :comments
 
-  def categories_attributes=(categories_collection)
-    category_collection.each do |category_attributes|
+  def categories_attributes=(categories_hashes)
+    category_hashes.each do |i, category_attributes|
       category = Category.find_or_create_by(name: category_attributes[:name])
       # self.categories << category  inefficient
       self.post_categories.build(category: category)
